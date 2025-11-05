@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,
+            //スクロール方向を逆転,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -183,9 +183,9 @@
         default_layer {
             bindings = <
 &kp Q          &kp W               &kp E                  &kp R          &kp T                                                                           &kp Y              &kp U  &kp I             &kp O          &mt_qs_on RIGHT_CONTROL P
-&kp A          &kp S               &kp D                  &lt_qs_on 3 F  &kp G                                                                           &kp H              &kp J  &kp K             &kp L          &lt 4 MINUS
-&kp Z          &kp X               &kp C                  &kp V          &kp B                                                                           &kp N              &kp M  &kp COMMA         &kp DOT        &lt 3 SLASH
-&mt LCTRL ESC  &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0    &lt_qs_on 2 BACKSPACE  &lt_qs_on 1 ENTER         &lt 5 LANGUAGE_1  &kp BACKSLASH  &mt RIGHT_SHIFT NON_US_BACKSLASH
+&kp A          &kp S               &kp D                  &lt_qs_on 5 F  &kp G                                                                           &kp H              &kp J  &kp K             &kp L          &lt 6 MINUS
+&kp Z          &kp X               &kp C                  &kp V          &kp B                                                                           &kp N              &kp M  &kp COMMA         &kp DOT        &lt 5 SLASH
+&mt LCTRL ESC  &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0    &lt_qs_on 4 BACKSPACE  &lt_qs_on 3 ENTER         &lt 7 LANGUAGE_1  &kp BACKSLASH  &mt RIGHT_SHIFT NON_US_BACKSLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -194,8 +194,8 @@
         OHNISHI {
             bindings = <
 &kp Q   &kp L   &kp U   &kp COMMA      &kp PERIOD                    &kp F   &kp W  &kp R   &kp Y   &mt_qs_on RIGHT_CONTROL P
-&kp E   &kp I   &kp A   &lt_qs_on 3 O  &kp MINUS                     &kp K   &kp T  &kp N   &kp S   &lt_qs_on 4 H
-&kp Z   &kp X   &kp C   &kp V          &kp SLASH                     &kp G   &kp D  &kp M   &kp J   &lt_qs_on 3 B
+&kp E   &kp I   &kp A   &lt_qs_on 5 O  &kp MINUS                     &kp K   &kp T  &kp N   &kp S   &lt_qs_on 6 H
+&kp Z   &kp X   &kp C   &kp V          &kp SLASH                     &kp G   &kp D  &kp M   &kp J   &lt_qs_on 5 B
 &trans  &trans  &trans  &trans         &trans      &trans    &trans  &trans         &trans  &trans  &trans
             >;
         };
@@ -244,13 +244,13 @@
 
         browse_SCROLL {
             bindings = <
-&trans    &kp LC(LG(LEFT_ARROW))  &kp UP_ARROW  &kp LC(LG(RIGHT_ARROW))  &trans                    &kp KP_MULTIPLY  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp KP_PLUS
-&trans    &kp LEFT_ARROW          &kp DOWN      &kp RIGHT_ARROW          &trans                    &kp KP_SLASH     &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp KP_MINUS
-&kp HOME  &kp PAGE_DOWN           &kp END       &kp PAGE_UP              &trans                    &kp UNDER        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ENTER
-&trans    &trans                  &trans        &trans                   &trans  &trans    &trans  &kp NUMBER_0                   &kp NUMBER_0  &kp DOT       &kp QUESTION
+&trans  &trans  &trans  &trans  &trans                         &kp RC(T)          &kp F15          &kp F16           &trans  &trans
+&trans  &trans  &trans  &trans  &trans                         &kp RC(W)          &kp RS(RC(TAB))  &kp RC(NUMBER_5)  &kp F5  &trans
+&trans  &trans  &trans  &trans  &trans                         &kp RS(RC(T))      &kp RA(LEFT)     &kp RA(RIGHT)     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp RG(TAB)  &kp RC(RG(RIGHT))                   &trans            &trans  &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
+            sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
 
         WIRELESS {
