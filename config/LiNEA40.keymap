@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,
+            //スクロール方向を逆転,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -127,6 +127,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
+            flavor = "tap-preferred";
         };
 
         lt_qs_on: lt_qs_on {
@@ -137,6 +138,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -182,10 +184,10 @@
 
         default_layer {
             bindings = <
-&kp Q          &kp W               &kp E                  &kp R          &kp T                                                                           &kp Y              &kp U  &kp I             &kp O          &mt_qs_on RIGHT_CONTROL P
-&kp A          &kp S               &kp D                  &lt_qs_on 5 F  &kp G                                                                           &kp H              &kp J  &kp K             &kp L          &lt 6 MINUS
-&kp Z          &kp X               &kp C                  &kp V          &kp B                                                                           &kp N              &kp M  &kp COMMA         &kp DOT        &lt 5 SLASH
-&mt LCTRL ESC  &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0    &lt_qs_on 4 BACKSPACE  &lt_qs_on 3 ENTER         &lt 7 LANGUAGE_1  &kp BACKSLASH  &mt RIGHT_SHIFT NON_US_BACKSLASH
+&kp Q          &kp W               &kp E                  &kp R          &kp T                                                                           &kp Y              &kp U  &kp I                   &kp O          &mt_qs_on RIGHT_CONTROL P
+&kp A          &kp S               &kp D                  &lt_qs_on 5 F  &kp G                                                                           &kp H              &kp J  &kp K                   &kp L          &lt_qs_on 6 MINUS
+&kp Z          &kp X               &kp C                  &kp V          &kp B                                                                           &kp N              &kp M  &kp COMMA               &kp DOT        &lt_qs_on 5 SLASH
+&mt LCTRL ESC  &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0    &lt_qs_on 4 BACKSPACE  &lt_qs_on 3 ENTER         &lt_qs_on 7 LANGUAGE_1  &kp RIGHT_WIN  &mt_qs_on RIGHT_ALT BACKSLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -198,6 +200,8 @@
 &kp Z   &kp X   &kp C   &kp V          &kp SLASH                     &kp G   &kp D  &kp M   &kp J   &lt_qs_on 5 B
 &trans  &trans  &trans  &trans         &trans      &trans    &trans  &trans         &trans  &trans  &trans
             >;
+
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
         };
 
         MOUSE {
@@ -222,10 +226,10 @@
 
         symbol {
             bindings = <
-&trans  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                    &kakko        &kp AMPERSAND    &kp DOLLAR    &trans     &trans
-&trans  &trans  &trans  &kp SEMICOLON     &kp COLON                            &doublequote  &kp AT_SIGN      &kp HASH      &kp CARET  &kp UNDERSCORE
-&trans  &trans  &trans  &kp SQT           &kp DOUBLE_QUOTES                    &kagikakko    &kp EXCLAMATION  &kp QUESTION  &kp TILDE  &kp MINUS
-&trans  &trans  &trans  &trans            &trans             &trans    &trans  &trans                         &trans        &trans     &trans
+&kp ESCAPE  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                    &kakko        &kp AMPERSAND    &kp DOLLAR    &trans     &trans
+&kp TAB     &trans  &trans  &kp SEMICOLON     &kp COLON                            &doublequote  &kp AT_SIGN      &kp HASH      &kp CARET  &kp UNDERSCORE
+&trans      &trans  &trans  &kp SQT           &kp DOUBLE_QUOTES                    &kagikakko    &kp EXCLAMATION  &kp QUESTION  &kp TILDE  &kp MINUS
+&trans      &trans  &trans  &trans            &trans             &trans    &trans  &trans                         &trans        &trans     &trans
             >;
 
             sensor-bindings = <&re_kp LANGUAGE_2 LANGUAGE_1>;
