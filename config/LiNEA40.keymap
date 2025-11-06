@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,
+            //スクロール方向を逆転,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -151,7 +151,7 @@
         JP_to_L1: JP_to_L1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &kp LANGUAGE_1>;
+            bindings = <&to 1 &kp LANGUAGE_1>;
             label = "JP_TO_L1";
         };
 
