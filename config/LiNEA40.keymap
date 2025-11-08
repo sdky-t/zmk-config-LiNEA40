@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -141,7 +141,7 @@
         JP_to_L1: JP_to_L1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 1 &kp LANGUAGE_1>;
+            bindings = <&to 2 &kp LANGUAGE_1>;
             label = "JP_TO_L1";
         };
 
@@ -173,9 +173,20 @@
         default_layer {
             bindings = <
 &kp Q          &kp W               &kp E                  &kp R          &kp T                                                                           &kp Y              &kp U  &kp I                   &kp O          &mt_qs_on RIGHT_CONTROL P
-&kp A          &kp S               &kp D                  &lt_qs_on 5 F  &kp G                                                                           &kp H              &kp J  &kp K                   &kp L          &lt_qs_on 6 MINUS
-&kp Z          &kp X               &kp C                  &kp V          &kp B                                                                           &kp N              &kp M  &kp COMMA               &kp DOT        &lt_qs_on 5 SLASH
-&mt LCTRL ESC  &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0    &lt_qs_on 4 BACKSPACE  &lt_qs_on 3 ENTER         &lt_qs_on 7 LANGUAGE_1  &kp RIGHT_WIN  &mt_qs_on RIGHT_ALT BACKSLASH
+&kp A          &kp S               &kp D                  &lt_qs_on 7 F  &kp G                                                                           &kp H              &kp J  &kp K                   &kp L          &lt_qs_on 8 MINUS
+&kp Z          &kp X               &kp C                  &kp V          &kp B                                                                           &kp N              &kp M  &kp COMMA               &kp DOT        &lt_qs_on 7 SLASH
+&mt LCTRL ESC  &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0    &lt_qs_on 6 BACKSPACE  &lt_qs_on 4 ENTER         &lt_qs_on 9 LANGUAGE_1  &kp RIGHT_WIN  &mt_qs_on RIGHT_ALT BACKSLASH
+            >;
+
+            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
+        };
+
+        default_not_ohnishi {
+            bindings = <
+&kp Q          &kp W               &kp E                  &kp R          &kp T                                                                                     &kp Y              &kp U  &kp I                   &kp O          &mt_qs_on RIGHT_CONTROL P
+&kp A          &kp S               &kp D                  &lt_qs_on 7 F  &kp G                                                                                     &kp H              &kp J  &kp K                   &kp L          &lt_qs_on 8 MINUS
+&kp Z          &kp X               &kp C                  &kp V          &kp B                                                                                     &kp N              &kp M  &kp COMMA               &kp DOT        &lt_qs_on 7 SLASH
+&mt LCTRL ESC  &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_qs_on RIGHT_CONTROL LANGUAGE_1    &lt_qs_on 6 BACKSPACE  &lt_qs_on 5 ENTER         &lt_qs_on 9 LANGUAGE_1  &kp RIGHT_WIN  &mt_qs_on RIGHT_ALT BACKSLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -183,10 +194,10 @@
 
         OHNISHI {
             bindings = <
-&kp Q   &kp L   &kp U   &kp COMMA      &kp PERIOD                    &kp F   &kp W  &kp R   &kp Y   &mt_qs_on RIGHT_CONTROL P
-&kp E   &kp I   &kp A   &lt_qs_on 5 O  &kp MINUS                     &kp K   &kp T  &kp N   &kp S   &lt_qs_on 6 H
-&kp Z   &kp X   &kp C   &kp V          &kp SLASH                     &kp G   &kp D  &kp M   &kp J   &lt_qs_on 5 B
-&trans  &trans  &trans  &trans         &trans      &trans    &trans  &trans         &trans  &trans  &trans
+&kp Q   &kp L   &kp U   &kp COMMA      &kp PERIOD                                      &kp F              &kp W  &kp R   &kp Y   &mt_qs_on RIGHT_CONTROL P
+&kp E   &kp I   &kp A   &lt_qs_on 7 O  &kp MINUS                                       &kp K              &kp T  &kp N   &kp S   &lt_qs_on 8 H
+&kp Z   &kp X   &kp C   &kp V          &kp SLASH                                       &kp G              &kp D  &kp M   &kp J   &lt_qs_on 7 B
+&trans  &trans  &trans  &trans         &trans      &mt_L1JP RIGHT_CONTROL 0    &trans  &lt_qs_on 4 ENTER         &trans  &trans  &trans
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -195,7 +206,7 @@
         MOUSE {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                        &trans  &trans    &trans    &trans  &kp RIGHT_CONTROL
-&trans  &trans  &trans  &trans  &trans                                        &trans  &mkp MB1  &mkp MB2  &mo 6   &trans
+&trans  &trans  &trans  &trans  &trans                                        &trans  &mkp MB1  &mkp MB2  &mo 8   &trans
 &trans  &trans  &trans  &trans  &trans                                        &trans  &trans    &trans    &trans  &trans
 &trans  &trans  &trans  &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL    &trans  &trans            &trans    &trans  &trans
             >;
@@ -207,6 +218,17 @@
 &kp F5  &kp F6   &kp F7   &kp F8   &kp RG(V)                           &kp PERIOD    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
 &kp F1  &kp F2   &kp F3   &kp F4   &kp RG(RS(S))                       &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
 &trans  &trans   &trans   &trans   &trans         &EN_to_L0    &trans  &trans                      &none         &kp PERCENT   &kp EQUAL
+            >;
+
+            sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>;
+        };
+
+        num_not_ohnishi {
+            bindings = <
+&kp F9  &kp F10  &kp F11  &kp F12  &kp RC(F)                                &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
+&kp F5  &kp F6   &kp F7   &kp F8   &kp RG(V)                                &kp PERIOD    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
+&kp F1  &kp F2   &kp F3   &kp F4   &kp RG(RS(S))                            &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
+&trans  &trans   &trans   &trans   &trans         &kp LANGUAGE_2    &trans  &trans                      &none         &kp PERCENT   &kp EQUAL
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>;
@@ -248,34 +270,12 @@
         WIRELESS {
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                         &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans        &trans        &trans        &trans        &trans                               &to 0           &to 8         &trans        &trans        &trans
+&trans        &trans        &trans        &trans        &trans                               &to 0           &to 1         &trans        &trans        &trans
 &trans        &trans        &trans        &trans        &trans                               &trans          &trans        &trans        &trans        &bt BT_CLR
 &trans        &trans        &trans        &trans        &trans        &trans    &bootloader  &studio_unlock                &trans        &trans        &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&inc_dec_kp RIGHT_ARROW LEFT_ARROW>;
-        };
-
-        default_not_ohnishi {
-            bindings = <
-&kp Q          &kp W               &kp E                  &kp R          &kp T                                                                                     &kp Y              &kp U  &kp I                   &kp O          &mt_qs_on RIGHT_CONTROL P
-&kp A          &kp S               &kp D                  &lt_qs_on 5 F  &kp G                                                                                     &kp H              &kp J  &kp K                   &kp L          &lt_qs_on 6 MINUS
-&kp Z          &kp X               &kp C                  &kp V          &kp B                                                                                     &kp N              &kp M  &kp COMMA               &kp DOT        &lt_qs_on 5 SLASH
-&mt LCTRL ESC  &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_qs_on RIGHT_CONTROL LANGUAGE_1    &lt_qs_on 4 BACKSPACE  &lt_qs_on 9 ENTER         &lt_qs_on 7 LANGUAGE_1  &kp RIGHT_WIN  &mt_qs_on RIGHT_ALT BACKSLASH
-            >;
-
-            sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
-        };
-
-        num_not_ohnishi {
-            bindings = <
-&kp F9  &kp F10  &kp F11  &kp F12  &kp RC(F)                                &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
-&kp F5  &kp F6   &kp F7   &kp F8   &kp RG(V)                                &kp PERIOD    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
-&kp F1  &kp F2   &kp F3   &kp F4   &kp RG(RS(S))                            &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-&trans  &trans   &trans   &trans   &trans         &kp LANGUAGE_2    &trans  &trans                      &none         &kp PERCENT   &kp EQUAL
-            >;
-
-            sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>;
         };
     };
 };
