@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -129,6 +129,15 @@
             quick-tap-ms = <200>;
             flavor = "tap-preferred";
         };
+
+        rotate_sl: rotate_sl {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            label = "ROTATE_SL";
+            #sensor-binding-cells = <2>;
+            bindings = <&sl>, <&sl>;
+
+            tap-ms = <200>;
+        };
     };
 
     macros {
@@ -163,7 +172,7 @@
         kagikakko: kagikakko {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANGUAGE_1 &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            bindings = <&kp LANGUAGE_1 &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp SPACE &kp ENTER &kp LEFT>;
             label = "KAGIKAKKO";
         };
     };
@@ -173,10 +182,10 @@
 
         default_layer {
             bindings = <
-&kp Q                     &kp W               &kp E                  &kp R          &kp T                                                                           &kp Y              &kp U  &kp I               &kp O          &mt_qs_on RIGHT_CONTROL P
-&kp A                     &kp S               &kp D                  &lt_qs_on 7 F  &kp G                                                                           &kp H              &kp J  &kp K               &kp L          &lt_qs_on 8 MINUS
-&mt_qs_on LEFT_CONTROL Z  &kp X               &kp C                  &kp V          &kp B                                                                           &kp N              &kp M  &kp COMMA           &kp DOT        &lt_qs_on 7 SLASH
-&mt LCTRL ESC             &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0    &lt_qs_on 6 BACKSPACE  &lt_qs_on 4 ENTER         &lt_qs_on 9 ESCAPE  &kp RIGHT_WIN  &mt_qs_on RIGHT_ALT BACKSLASH
+&kp Q                     &kp W               &kp E                  &kp R          &kp T                                                                           &kp Y              &kp U          &kp I               &kp O          &mt_qs_on RIGHT_ALT P
+&kp A                     &kp S               &kp D                  &lt_qs_on 7 F  &kp G                                                                           &kp H              &lt_qs_on 7 J  &kp K               &kp L          &lt_qs_on 8 MINUS
+&mt_qs_on LEFT_CONTROL Z  &kp X               &kp C                  &kp V          &kp B                                                                           &kp N              &kp M          &kp COMMA           &kp DOT        &lt_qs_on 7 SLASH
+&mt LCTRL ESC             &mt LEFT_SHIFT TAB  &mt LEFT_ALT LEFT_WIN  &none          &mt_qs_on RIGHT_SHIFT SPACE  &mt_L1JP RIGHT_CONTROL 0    &lt_qs_on 6 BACKSPACE  &lt_qs_on 4 ENTER                 &lt_qs_on 9 ESCAPE  &kp RIGHT_WIN  &mt_qs_on RIGHT_CONTROL BACKSLASH
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_DOWN SCRL_UP>;
@@ -184,7 +193,7 @@
 
         OHNISHI {
             bindings = <
-&kp Q   &kp L   &kp U   &kp COMMA      &kp PERIOD                                      &kp F              &kp W  &kp R   &kp Y   &mt_qs_on RIGHT_CONTROL P
+&kp Q   &kp L   &kp U   &kp COMMA      &kp PERIOD                                      &kp F              &kp W  &kp R   &kp Y   &mt_qs_on RIGHT_ALT P
 &kp E   &kp I   &kp A   &lt_qs_on 7 O  &kp MINUS                                       &kp K              &kp T  &kp N   &kp S   &lt_qs_on 8 H
 &kp Z   &kp X   &kp C   &kp V          &kp SLASH                                       &kp G              &kp D  &kp M   &kp J   &lt_qs_on 7 B
 &trans  &trans  &trans  &trans         &trans      &mt_L1JP RIGHT_CONTROL 0    &trans  &lt_qs_on 4 ENTER         &trans  &trans  &trans
@@ -237,20 +246,20 @@
 
         symbol_scroll {
             bindings = <
-&kp ESCAPE  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                    &kakko        &kp AMPERSAND    &kp DOLLAR    &trans     &trans
+&kp ESCAPE  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                    &kakko        &kp AMPERSAND    &kp DOLLAR    &kp TILDE  &kp MINUS
 &kp TAB     &trans  &trans  &kp SEMICOLON     &kp COLON                            &doublequote  &kp AT_SIGN      &kp HASH      &kp CARET  &kp UNDERSCORE
 &trans      &trans  &trans  &kp SQT           &kp DOUBLE_QUOTES                    &kagikakko    &kp EXCLAMATION  &kp QUESTION  &kp TILDE  &kp MINUS
 &trans      &trans  &trans  &trans            &trans             &trans    &trans  &trans                         &trans        &trans     &trans
             >;
 
-            sensor-bindings = <&re_kp LANGUAGE_2 LANGUAGE_1>;
+            sensor-bindings = <&rotate_sl 4 6>;
         };
 
         ctrl_office {
             bindings = <
 &kp RA(Q)  &kp RA(W)  &kp RA(E)  &kp RA(R)  &trans                     &trans         &kp HOME   &kp UP_ARROW  &kp END    &trans
 &kp RA(A)  &kp RA(S)  &kp RA(D)  &kp RA(F)  &trans                     &kp RC(Z)      &kp LEFT   &kp DOWN      &kp RIGHT  &trans
-&trans     &trans     &trans     &trans     &trans                     &kp RC(Y)      &kp RC(C)  &kp RC(X)     &kp RC(V)  &trans
+&kp RA(Z)  &kp RA(X)  &kp RA(C)  &kp RA(V)  &trans                     &kp RC(Y)      &kp RC(C)  &kp RC(X)     &kp RC(V)  &trans
 &trans     &trans     &trans     &trans     &trans  &trans    &kp DEL  &kp RIGHT_WIN             &trans        &trans     &trans
             >;
 
@@ -259,10 +268,10 @@
 
         browse_snipe {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                         &kp RC(T)          &kp F15          &kp F16        &trans  &trans
-&trans  &trans  &trans  &trans  &trans                         &kp RC(W)          &kp RS(RC(TAB))  &kp RC(TAB)    &kp F5  &trans
-&trans  &trans  &trans  &trans  &trans                         &kp RC(RS(T))      &kp RA(LEFT)     &kp RA(RIGHT)  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp RG(TAB)  &kp RC(RG(RIGHT))                   &trans         &trans  &trans
+&trans  &trans  &trans  &trans  &trans                                   &kp RC(T)          &kp F15          &kp F16        &trans  &trans
+&trans  &trans  &trans  &trans  &trans                                   &kp RC(W)          &kp RS(RC(TAB))  &kp RC(TAB)    &kp F5  &trans
+&trans  &trans  &trans  &trans  &trans                                   &kp RC(RS(T))      &kp RA(LEFT)     &kp RA(RIGHT)  &trans  &trans
+&trans  &trans  &trans  &trans  &kp RC(RG(LEFT))  &trans    &kp RG(TAB)  &kp RC(RG(RIGHT))                   &trans         &trans  &trans
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
