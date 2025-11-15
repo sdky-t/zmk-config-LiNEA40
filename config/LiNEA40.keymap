@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>;
     };
 };
@@ -214,10 +214,10 @@
 
         num_func {
             bindings = <
-&kp F9  &kp F10  &kp F11  &kp F12  &kp RC(F)                           &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
-&kp F5  &kp F6   &kp F7   &kp F8   &kp RG(V)                           &kp PERIOD    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
-&kp F1  &kp F2   &kp F3   &kp F4   &kp RG(RS(S))                       &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-&trans  &trans   &trans   &trans   &trans         &EN_to_L0    &trans  &trans                      &none         &kp PERCENT   &kp EQUAL
+&kp F9  &kp F10  &kp F11  &kp F12  &kp RC(F)                                          &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
+&kp F5  &kp F6   &kp F7   &kp F8   &kp RG(V)                                          &kp PERIOD    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
+&kp F1  &kp F2   &kp F3   &kp F4   &kp RG(RS(S))                                      &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
+&trans  &trans   &trans   &trans   &trans         &mt_L0EN RIGHT_CONTROL 0    &trans  &trans                      &none         &kp PERCENT   &kp EQUAL
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>;
@@ -225,10 +225,10 @@
 
         num_not_ohnishi {
             bindings = <
-&kp F9  &kp F10  &kp F11  &kp F12  &kp RC(F)                                &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
-&kp F5  &kp F6   &kp F7   &kp F8   &kp RG(V)                                &kp PERIOD    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
-&kp F1  &kp F2   &kp F3   &kp F4   &kp RG(RS(S))                            &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-&trans  &trans   &trans   &trans   &trans         &kp LANGUAGE_2    &trans  &trans                      &none         &kp PERCENT   &kp EQUAL
+&kp F9  &kp F10  &kp F11  &kp F12  &kp RC(F)                                                    &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
+&kp F5  &kp F6   &kp F7   &kp F8   &kp RG(V)                                                    &kp PERIOD    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
+&kp F1  &kp F2   &kp F3   &kp F4   &kp RG(RS(S))                                                &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
+&trans  &trans   &trans   &trans   &trans         &mt_qs_on RIGHT_CONTROL LANGUAGE_2    &trans  &trans                      &none         &kp PERCENT   &kp EQUAL
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>;
@@ -258,10 +258,10 @@
 
         browse_snipe {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                         &kp RC(T)          &kp F15          &kp F16           &trans  &trans
-&trans  &trans  &trans  &trans  &trans                         &kp RC(W)          &kp RS(RC(TAB))  &kp RC(NUMBER_5)  &kp F5  &trans
-&trans  &trans  &trans  &trans  &trans                         &kp RS(RC(T))      &kp RA(LEFT)     &kp RA(RIGHT)     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp RG(TAB)  &kp RC(RG(RIGHT))                   &trans            &trans  &trans
+&trans  &trans  &trans  &trans  &trans                         &kp RC(T)          &kp F15          &kp F16        &trans  &trans
+&trans  &trans  &trans  &trans  &trans                         &kp RC(W)          &kp RS(RC(TAB))  &kp RC(TAB)    &kp F5  &trans
+&trans  &trans  &trans  &trans  &trans                         &kp RC(RS(T))      &kp RA(LEFT)     &kp RA(RIGHT)  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp RG(TAB)  &kp RC(RG(RIGHT))                   &trans         &trans  &trans
             >;
 
             sensor-bindings = <&re_kp C_VOLUME_DOWN C_VOLUME_UP>;
