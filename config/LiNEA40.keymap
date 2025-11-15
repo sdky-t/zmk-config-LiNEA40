@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -130,11 +130,11 @@
             flavor = "tap-preferred";
         };
 
-        rotate_sl: rotate_sl {
+        rotate_tog: rotate_tog {
             compatible = "zmk,behavior-sensor-rotate-var";
-            label = "ROTATE_SL";
+            label = "ROTATE_TOG";
             #sensor-binding-cells = <2>;
-            bindings = <&sl>, <&sl>;
+            bindings = <&tog>, <&tog>;
 
             tap-ms = <200>;
         };
@@ -252,7 +252,7 @@
 &trans      &trans  &trans  &trans            &trans             &trans    &trans  &trans                         &trans        &trans     &trans
             >;
 
-            sensor-bindings = <&rotate_sl 4 4>;
+            sensor-bindings = <&rotate_tog 4 4>;
         };
 
         ctrl_office {
