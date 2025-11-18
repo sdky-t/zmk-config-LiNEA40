@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 12>;
     };
@@ -130,11 +130,11 @@
             flavor = "tap-preferred";
         };
 
-        rotate_tog: rotate_tog {
+        rotate_test: rotate_test {
             compatible = "zmk,behavior-sensor-rotate-var";
-            label = "ROTATE_TOG";
+            label = "ROTATE_TEST";
             #sensor-binding-cells = <2>;
-            bindings = <&tog>, <&tog>;
+            bindings = <&sss>, <&ddd>;
 
             tap-ms = <200>;
         };
@@ -174,6 +174,34 @@
             #binding-cells = <0>;
             bindings = <&kp LANGUAGE_1 &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp SPACE &kp ENTER &kp LEFT>;
             label = "KAGIKAKKO";
+        };
+
+        sss: sss {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp RIGHT_CONTROL>,
+                <&macro_press>,
+                <&kp K_SCROLL_UP>,
+                <&macro_tap>,
+                <&kp RIGHT_CONTROL>,
+                <&macro_release>;
+
+            label = "SSS";
+        };
+
+        ddd: ddd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp RIGHT_CONTROL>,
+                <&macro_press>,
+                <&msc SCRL_DOWN>,
+                <&macro_tap>,
+                <&kp RIGHT_CONTROL>,
+                <&macro_release>;
+
+            label = "DDD";
         };
     };
 
@@ -261,7 +289,7 @@
 &trans      &trans  &trans  &trans            &trans             &trans    &trans  &trans                         &trans        &trans     &trans
             >;
 
-            sensor-bindings = <&re_kp C_AC_ZOOM_OUT C_AC_ZOOM_IN>;
+            sensor-bindings = <&rotate_test 0 0>;
         };
 
         ctrl_office {
