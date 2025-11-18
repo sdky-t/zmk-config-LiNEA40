@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 12>;
     };
@@ -182,10 +182,13 @@
             bindings =
                 <&kp RIGHT_CONTROL>,
                 <&macro_press>,
+                <&macro_wait_time 20>,
                 <&kp K_SCROLL_UP>,
                 <&macro_tap>,
+                <&macro_wait_time 20>,
                 <&kp RIGHT_CONTROL>,
-                <&macro_release>;
+                <&macro_release>,
+                <&macro_wait_time 20>;
 
             label = "SSS";
         };
@@ -196,10 +199,13 @@
             bindings =
                 <&kp RIGHT_CONTROL>,
                 <&macro_press>,
-                <&msc SCRL_DOWN>,
+                <&macro_wait_time 20>,
+                <&kp Z>,
                 <&macro_tap>,
+                <&macro_wait_time 20>,
                 <&kp RIGHT_CONTROL>,
-                <&macro_release>;
+                <&macro_release>,
+                <&macro_wait_time 20>;
 
             label = "DDD";
         };
