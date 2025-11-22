@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 12>;
     };
@@ -228,7 +228,7 @@
         OHNISHI {
             bindings = <
 &kp Q                     &kp L   &kp U   &kp COMMA      &kp PERIOD                                      &kp F              &kp W          &kp R   &kp Y   &mt_qs_on RIGHT_ALT P
-&mt_qs_on LEFT_CONTROL A  &kp I   &kp A   &lt_qs_on 8 O  &kp MINUS                                       &kp K              &lt_qs_on 8 T  &kp N   &kp S   &lt_qs_on 9 H
+&mt_qs_on LEFT_CONTROL E  &kp I   &kp A   &lt_qs_on 8 O  &kp MINUS                                       &kp K              &lt_qs_on 8 T  &kp N   &kp S   &lt_qs_on 9 H
 &kp Z                     &kp X   &kp C   &kp V          &kp SLASH                                       &kp G              &kp D          &kp M   &kp J   &lt_qs_on 8 B
 &trans                    &trans  &trans  &trans         &trans      &mt_L1JP RIGHT_CONTROL 0    &trans  &lt_qs_on 5 ENTER                 &trans  &trans  &trans
             >;
@@ -249,8 +249,8 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                        &trans  &trans    &trans           &trans             &trans
-&trans  &trans  &trans  &trans  &trans                                        &trans  &mkp MB1  &mkp MB2         &mo 7              &mo 4
+&trans  &trans  &trans  &trans  &trans                                        &trans  &trans    &trans           &mo 4              &trans
+&trans  &trans  &trans  &trans  &trans                                        &trans  &mkp MB1  &mkp MB2         &mo 7              &trans
 &trans  &trans  &trans  &trans  &trans                                        &trans  &trans    &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &trans
 &trans  &trans  &trans  &trans  &kp RIGHT_SHIFT  &kp RIGHT_CONTROL    &trans  &trans            &trans           &trans             &trans
             >;
