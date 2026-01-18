@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 12>;
     };
@@ -71,31 +71,42 @@
             bindings = <&kp LEFT_PARENTHESIS>;
             key-positions = <2 3>;
             layers = <0 1 2>;
+            timeout-ms = <120>;
         };
 
         kakko_right {
             bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <6 7>;
+            layers = <0 1 2>;
+            timeout-ms = <120>;
         };
 
         daikakko_left {
             bindings = <&kp LEFT_BRACKET>;
             key-positions = <12 13>;
+            layers = <0 1 2>;
+            timeout-ms = <120>;
         };
 
         daikakko_right {
             bindings = <&kp RIGHT_BRACKET>;
             key-positions = <16 17>;
+            layers = <1 0 2>;
+            timeout-ms = <120>;
         };
 
         chukakko_left {
             bindings = <&kp LEFT_BRACE>;
             key-positions = <22 23>;
+            layers = <0 1 2>;
+            timeout-ms = <120>;
         };
 
         chukakko_right {
             bindings = <&kp RIGHT_BRACE>;
             key-positions = <26 27>;
+            layers = <0 1 2>;
+            timeout-ms = <120>;
         };
     };
 
