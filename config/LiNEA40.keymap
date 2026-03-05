@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 12>;
     };
@@ -359,10 +359,10 @@
 
         symbol_scroll {
             bindings = <
-&kp ESCAPE  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                            &kakko        &kp AMPERSAND    &kp DOLLAR    &kp TILDE  &kp MINUS
-&kp TAB     &trans  &trans  &kp SEMICOLON     &kp COLON                                    &doublequote  &kp AT_SIGN      &kp HASH      &kp CARET  &kp UNDERSCORE
-&trans      &trans  &trans  &kp SQT           &kp DOUBLE_QUOTES                            &kagikakko    &kp EXCLAMATION  &kp QUESTION  &kp TILDE  &kp MINUS
-&trans      &trans  &trans  &trans            &trans             &kp UNDERSCORE    &trans  &trans                         &trans        &trans     &trans
+&kp ESCAPE  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                    &kakko        &kp AMPERSAND    &kp DOLLAR    &kp TILDE  &kp MINUS
+&kp TAB     &trans  &trans  &kp SEMICOLON     &kp COLON                            &doublequote  &kp AT_SIGN      &kp HASH      &kp CARET  &kp UNDERSCORE
+&trans      &trans  &trans  &kp SQT           &kp DOUBLE_QUOTES                    &kagikakko    &kp EXCLAMATION  &kp QUESTION  &kp TILDE  &kp MINUS
+&trans      &trans  &trans  &trans            &trans             &trans    &trans  &trans                         &trans        &trans     &trans
             >;
 
             sensor-bindings = <&re_kp F17 F18>;
