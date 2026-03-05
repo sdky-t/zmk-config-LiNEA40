@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 12>;
     };
@@ -370,10 +370,10 @@
 
         ctrl_office {
             bindings = <
-&kp RA(Q)  &kp RA(W)  &kp RA(E)  &kp RA(R)  &trans                     &trans         &kp HOME   &kp UP_ARROW  &kp END    &trans
-&kp RA(A)  &kp RA(S)  &kp RA(D)  &kp RA(F)  &trans                     &kp RC(Z)      &kp LEFT   &kp DOWN      &kp RIGHT  &trans
-&kp RA(Z)  &kp RA(X)  &kp RA(C)  &kp RA(V)  &trans                     &kp RC(Y)      &kp RC(C)  &kp RC(X)     &kp RC(V)  &trans
-&trans     &trans     &trans     &trans     &trans  &trans    &kp DEL  &kp RIGHT_WIN             &trans        &trans     &trans
+&kp RA(Q)  &kp RA(W)  &kp RA(E)  &kp RA(R)  &trans                                &trans         &kp HOME   &kp UP_ARROW  &kp END    &trans
+&kp RA(A)  &kp RA(S)  &kp RA(D)  &kp RA(F)  &trans                                &kp RC(Z)      &kp LEFT   &kp DOWN      &kp RIGHT  &trans
+&kp RA(Z)  &kp RA(X)  &kp RA(C)  &kp RA(V)  &trans                                &kp RC(Y)      &kp RC(C)  &kp RC(X)     &kp RC(V)  &trans
+&trans     &trans     &trans     &trans     &kp DELETE  &kp BACKSPACE    &kp DEL  &kp RIGHT_WIN             &trans        &trans     &trans
             >;
 
             sensor-bindings = <&re_kp Z Y>;
