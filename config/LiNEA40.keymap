@@ -57,7 +57,7 @@
         layers = <SCROLL>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            //スクロール方向を逆転,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_scaler 1 12>;
     };
@@ -113,6 +113,26 @@
             layers = <0 1 2>;
             timeout-ms = <30>;
             require-prior-idle-ms = <120>;
+        };
+
+        colon {
+            bindings = <&kp COLON>;
+            key-positions = <13 14>;
+        };
+
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <15 16>;
+        };
+
+        doublequote {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <3 4>;
+        };
+
+        quote {
+            bindings = <&kp SQT>;
+            key-positions = <6 5>;
         };
     };
 
@@ -317,10 +337,10 @@
 
         num_func {
             bindings = <
-&kp F9  &kp F10  &kp F11  &kp F12  &kp RC(F)                                          &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
-&kp F5  &kp F6   &kp F7   &kp F8   &kp RG(V)                                          &kp PERIOD    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
-&kp F1  &kp F2   &kp F3   &kp F4   &kp RG(RS(S))                                      &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
-&trans  &trans   &trans   &trans   &trans         &mt_L0EN RIGHT_CONTROL 0    &trans  &trans                      &none         &kp PERCENT   &kp EQUAL
+&kp F9  &kp F10  &kp F11  &kp F12  &kp RC(F)                                           &kp PLUS      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp MINUS
+&kp F5  &kp F6   &kp F7   &kp F8   &kp RG(V)                                           &kp PERIOD    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0
+&kp F1  &kp F2   &kp F3   &kp F4   &kp RG(RS(S))                                       &kp ASTERISK  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH
+&trans  &trans   &trans   &trans   &kp UNDERSCORE  &mt_L0EN RIGHT_CONTROL 0    &trans  &trans                      &none         &kp PERCENT   &kp EQUAL
             >;
 
             sensor-bindings = <&mouse_scrl SCRL_RIGHT SCRL_LEFT>;
@@ -339,10 +359,10 @@
 
         symbol_scroll {
             bindings = <
-&kp ESCAPE  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                    &kakko        &kp AMPERSAND    &kp DOLLAR    &kp TILDE  &kp MINUS
-&kp TAB     &trans  &trans  &kp SEMICOLON     &kp COLON                            &doublequote  &kp AT_SIGN      &kp HASH      &kp CARET  &kp UNDERSCORE
-&trans      &trans  &trans  &kp SQT           &kp DOUBLE_QUOTES                    &kagikakko    &kp EXCLAMATION  &kp QUESTION  &kp TILDE  &kp MINUS
-&trans      &trans  &trans  &trans            &trans             &trans    &trans  &trans                         &trans        &trans     &trans
+&kp ESCAPE  &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET                            &kakko        &kp AMPERSAND    &kp DOLLAR    &kp TILDE  &kp MINUS
+&kp TAB     &trans  &trans  &kp SEMICOLON     &kp COLON                                    &doublequote  &kp AT_SIGN      &kp HASH      &kp CARET  &kp UNDERSCORE
+&trans      &trans  &trans  &kp SQT           &kp DOUBLE_QUOTES                            &kagikakko    &kp EXCLAMATION  &kp QUESTION  &kp TILDE  &kp MINUS
+&trans      &trans  &trans  &trans            &trans             &kp UNDERSCORE    &trans  &trans                         &trans        &trans     &trans
             >;
 
             sensor-bindings = <&re_kp F17 F18>;
